@@ -89,6 +89,3 @@ Each stage below is a **milestone**, not a sprint deadline — move to the next 
 
 ---
 
-## Suggested commit rhythm
-
-Each ✅ checkpoint above = one meaningful commit/PR. This gives your repo a clean, readable history that tells the story of the build — genuinely useful if you ever walk someone through this project in an interview.

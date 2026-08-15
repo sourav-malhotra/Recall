@@ -1,0 +1,28 @@
+# --- Backend / API ---
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-dotenv==1.0.1
+pydantic==2.9.2
+
+# --- Orchestration / LLM ---
+langchain==0.3.7
+langchain-anthropic==0.2.4
+anthropic==0.39.0
+
+# --- Embeddings / Vector store ---
+sentence-transformers==3.2.1
+chromadb==0.5.18
+
+# --- Ingestion: YouTube ---
+youtube-transcript-api==0.6.2
+yt-dlp==2024.11.4
+
+# --- Ingestion: Articles ---
+trafilatura==1.12.2
+requests==2.32.3
+
+# --- Telegram bot ---
+python-telegram-bot==21.7
+
+# --- Utilities ---
+tiktoken==0.8.0

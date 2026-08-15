@@ -14,7 +14,7 @@ sentence-transformers==3.2.1
 chromadb==0.5.18
 
 # --- Ingestion: YouTube ---
-youtube-transcript-api==0.6.2
+youtube-transcript-api>=1.0.0
 yt-dlp==2024.11.4
 
 # --- Ingestion: Articles ---

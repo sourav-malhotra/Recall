@@ -29,6 +29,17 @@ class ArticleContent:
     language: str       # original detected language (e.g. 'en', 'hi')
 
 
+def is_youtube_url(url: str) -> bool:
+    """
+    Quick check used by the ingestion router (pipeline.py) to decide whether
+    a URL should go to youtube.py instead of this article extractor.
+    Kept here too so article.py can guard against being called on a YouTube
+    link directly, like we just saw happen during manual testing.
+    """
+    domain = urlparse(url).netloc.lower()
+    return "youtube.com" in domain or "youtu.be" in domain
+
+
 def fetch_html(url: str) -> str:
     """
     Downloads the raw HTML for a URL.
@@ -129,6 +140,12 @@ def process_article_url(url: str) -> ArticleContent:
     Main entry point — call this from the ingestion pipeline.
     Returns a fully populated ArticleContent object, text guaranteed English.
     """
+    if is_youtube_url(url):
+        raise ValueError(
+            f"{url} is a YouTube link — route it to youtube.py's "
+            f"process_youtube_url() instead of the article extractor."
+        )
+
     html = fetch_html(url)
     extracted = extract_clean_text(html, url)
 

@@ -1,4 +1,4 @@
-# 🧠 Recall — System Architecture
+#  Recall — System Architecture
 
 > *"You've watched it. You've read it. You've built it. You just forgot where."*
 > Recall is the second brain that remembers so you don't have to.
@@ -13,10 +13,10 @@ Four organs make up this brain:
 
 | Organ | Biological analogy | What it actually does |
 |---|---|---|
-| 👁️ **The Senses** | Eyes/ears — how memories enter | Ingestion pipeline (YouTube, articles, GitHub) |
-| 🗂️ **The Hippocampus** | Encodes short-term → long-term memory | Chunking + embedding pipeline |
-| 🏛️ **The Cortex** | Long-term storage | ChromaDB (vectors) + SQLite (metadata) |
-| 💬 **The Voice** | Speech/reasoning center | LangChain agent + Claude, streamed to chat UI |
+| **The Senses** | Eyes/ears — how memories enter | Ingestion pipeline (YouTube, articles, GitHub) |
+| **The Hippocampus** | Encodes short-term → long-term memory | Chunking + embedding pipeline |
+| **The Cortex** | Long-term storage | ChromaDB (vectors) + SQLite (metadata) |
+| **The Voice** | Speech/reasoning center | LangChain agent + Claude, streamed to chat UI |
 
 ---
 
@@ -31,7 +31,7 @@ Four organs make up this brain:
               │                       │                       │
               ▼                       ▼                       ▼
       ┌───────────────┐     ┌─────────────────┐     ┌──────────────────┐
-      │  💻 Web UI      │     │  📱 Telegram Bot  │     │  (future) Chrome   │
+      │  Web UI      │     │  Telegram Bot  │     │  (future) Chrome   │
       │  React + Tailwind│     │  quick link drop │     │  extension          │
       └───────┬────────┘     └────────┬─────────┘     └─────────┬─────────┘
               │                       │                          │
@@ -45,7 +45,7 @@ Four organs make up this brain:
            ┌────────────────────┼─────────────────────┐
            ▼                    ▼                      ▼
  ┌───────────────────┐ ┌─────────────────┐  ┌───────────────────────┐
- │ 👁️ SENSES           │ │ 💬 VOICE          │  │ 🗂️ HIPPOCAMPUS           │
+ │  SENSES           │ │  VOICE          │  │  HIPPOCAMPUS           │
  │ youtube.py          │ │ retriever.py     │  │ chunk.py                │
  │ article.py           │ │ qa_chain.py      │  │ embed.py                │
  │ github.py             │ │ (LangChain LCEL) │  │                          │
@@ -54,7 +54,7 @@ Four organs make up this brain:
             └─────────────────────┼──────────────────────────┘
                                   ▼
                       ┌───────────────────────┐
-                      │   🏛️ CORTEX               │
+                      │    CORTEX               │
                       │  ChromaDB (vectors)      │
                       │  SQLite (metadata)        │
                       └───────────────────────┘
